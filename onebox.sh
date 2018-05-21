@@ -8,7 +8,7 @@
 set -axe
 
 # static strings
-readonly MSFT="iovex"
+readonly MSFT="dingli125"
 readonly EDX="edx"
 readonly USE_MSFT="useMsftRepo"
 readonly USE_FICUS="useFicusTag"

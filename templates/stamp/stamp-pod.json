@@ -172,7 +172,7 @@
         },
         "customInstallerGithubAccountName": {
             "type": "string",
-            "defaultValue": "iovex",
+            "defaultValue": "dingli125",
             "metadata": {
                 "description": "Name of the GitHub account where the custom installer lives"
             }
