@@ -16,7 +16,7 @@ ENVIRONMENT=bvt
 ##########################
 
 # the site certificate files (.crt & .key) have to be named after the BASE_URL value
-BASE_URL=nytraining.crf
+BASE_URL=nytraining.cf
 LMS_URL=lms.$BASE_URL
 CMS_URL=cms.$BASE_URL
 PREVIEW_URL=preview.$BASE_URL
@@ -25,14 +25,14 @@ PREVIEW_URL=preview.$BASE_URL
 # URL-building will be replaced by the use of LMS_URL | CMS_URL (above)
 # uri format: [lms|cms]-%%CLUSTERNAME%%-%%DEPLOYMENT_SLOT%%.%%REGION%%.cloudapp.chinacloudapi.cn
 TEMPLATE_TYPE=stamp # stamp|fullstack|devstack
-CLUSTERNAME=edxgroup
-ADMIN_USER=lexoxaadmin
+CLUSTERNAME={CLUSTERNAME}
+ADMIN_USER=oxaadmin
 OXA_TOOLS_VERSION=oxa/master.fic
 
 # config/server-vars.yml
 #YOUTUBE_API_KEY=todo
-PLATFORM_NAME="U课在线培训平台"
-PLATFORM_EMAIL=dinglb@nysoftland.com.cn
+PLATFORM_NAME=
+PLATFORM_EMAIL=
 
 # Override configured email addresses
 EDXAPP_EMAIL_BUGS="${PLATFORM_EMAIL}"
@@ -57,15 +57,15 @@ FORUM_VERSION=open-release/ficus.master
 
 # fullstack uses default EMAIL_HOST=localhost
 # config/stamp/stamp.yml
-EDXAPP_EMAIL_HOST=mail.nysoftland.com.cn
-EDXAPP_EMAIL_HOST_USER=dinglb@nysoftland.com.cn
-EDXAPP_EMAIL_HOST_PASSWORD=dlb@312
-EDXAPP_EMAIL_PORT=25
+EDXAPP_EMAIL_HOST=
+EDXAPP_EMAIL_HOST_USER=
+EDXAPP_EMAIL_HOST_PASSWORD=
+EDXAPP_EMAIL_PORT=
 EDXAPP_EMAIL_USE_TLS=true
 
 # storage uploads
-AZURE_ACCOUNT_NAME=edxgroupsecuresa
-AZURE_ACCOUNT_KEY=xB0G9qvUygYssC3JOIdMCqIh8eIYPZJ6OgVhVPTxF+QblLg6cLFBKTamGY4q9otOYpLViNRCRRAJXFoG8XSYLQ==
+AZURE_ACCOUNT_NAME={AZURE_ACCOUNT_NAME}
+AZURE_ACCOUNT_KEY={AZURE_ACCOUNT_KEY}
 
 NGINX_ENABLE_SSL=True
 NGINX_SSL_CERTIFICATE="/oxa/oxa-tools-config/env/${ENVIRONMENT}/cert.crt"
@@ -76,12 +76,12 @@ NGINX_SSL_KEY="/oxa/oxa-tools-config/env/${ENVIRONMENT}/cert.key"
 ##########################
 
 # Mongo Credentials
-MONGO_USER=oxamongoadmin
-MONGO_PASSWORD=5QFrMCIKJaVazBWisd0fMJR
+MONGO_USER=
+MONGO_PASSWORD=
 
 # Mongo Replicaset Credentials
-MONGO_REPLICASET_KEY=nptrnutnqemr2
-MONGO_REPLICASET_NAME=edxgrouprs
+MONGO_REPLICASET_KEY=
+MONGO_REPLICASET_NAME={MONGO_REPLICASET_NAME}
 
 # MongoDB Installer Configurations
 MONGO_INSTALLER_SCRIPT=mongodb-ubuntu-install.sh
@@ -97,18 +97,18 @@ MONGO_SERVER_LIST=10.0.0.11,10.0.0.12,10.0.0.13
 
 # Mysql Credentials
 MYSQL_ADMIN_USER=oxamysqladmin
-MYSQL_ADMIN_PASSWORD=5QFrMCIKJaVazBWisd0fMJR
+MYSQL_ADMIN_PASSWORD=
 
 # MySql Temporary Credentials
-MYSQL_TEMP_USER=oxamysqlbackupuser
-MYSQL_TEMP_PASSWORD=5QFrMCIKJaVazBWisd0fMJR
+MYSQL_TEMP_USER=oxamysqlbackup
+MYSQL_TEMP_PASSWORD=
 
 # App and Replication accounts (same account??)
 # TODO: separate the replication user from the edxapp user
-MYSQL_USER=oxamysqlrepluser
-MYSQL_PASSWORD=5QFrMCIKJaVazBWisd0fMJR
-MYSQL_REPL_USER=oxamysqlrepluser
-MYSQL_REPL_USER_PASSWORD=5QFrMCIKJaVazBWisd0fMJR
+MYSQL_USER=oxamysqlrepl
+MYSQL_PASSWORD=
+MYSQL_REPL_USER=oxamysqlrepl
+MYSQL_REPL_USER_PASSWORD=
 
 # Mysql Installer Configurations
 MYSQL_INSTALLER_SCRIPT=mysql-ubuntu-install.sh
@@ -118,25 +118,25 @@ MYSQL_SERVER_LIST=10.0.0.16,10.0.0.17,10.0.0.18
 MYSQL_MASTER_PORT=3306
 
 # Superuser Information (this gives front door access to the application. This value must be updated.)
-EDXAPP_SU_PASSWORD=5QFrMCIKJaVazBWisd0fMJR
-EDXAPP_SU_EMAIL=dinglb@nysoftland.com.cn
-EDXAPP_SU_USERNAME=edxappadmin
+EDXAPP_SU_PASSWORD=
+EDXAPP_SU_EMAIL=
+EDXAPP_SU_USERNAME=
 
 # Azure Active Directory OAuth2 Third Party Authentication Configuration
-EDXAPP_ENABLE_THIRD_PARTY_AUTH=false
-EDXAPP_AAD_CLIENT_ID="b5167625-06d4-4b70-ba17-d15149bc3b16"
-EDXAPP_AAD_SECURITY_KEY="rt2q47Z5aWc7K5mHH2WfwbNwbEdzyX90y9qWKexWxns="
-EDXAPP_AAD_BUTTON_NAME=""
+EDXAPP_ENABLE_THIRD_PARTY_AUTH={EDXAPP_ENABLE_THIRD_PARTY_AUTH}
+EDXAPP_AAD_CLIENT_ID="{EDXAPP_AAD_CLIENT_ID}"
+EDXAPP_AAD_SECURITY_KEY="{EDXAPP_AAD_SECURITY_KEY}"
+EDXAPP_AAD_BUTTON_NAME="{EDXAPP_AAD_BUTTON_NAME}"
 
 # Comprehensive Theming Configuration
-EDXAPP_ENABLE_COMPREHENSIVE_THEMING=false
-EDXAPP_COMPREHENSIVE_THEME_DIRS=\[\ \"\"\ \]
-EDXAPP_DEFAULT_SITE_THEME=""
+EDXAPP_ENABLE_COMPREHENSIVE_THEMING={EDXAPP_ENABLE_COMPREHENSIVE_THEMING}
+EDXAPP_COMPREHENSIVE_THEME_DIRS=\[\ \"{EDXAPP_COMPREHENSIVE_THEME_DIRECTORY}\"\ \]
+EDXAPP_DEFAULT_SITE_THEME="{EDXAPP_DEFAULT_SITE_THEME}"
 
 COMBINED_LOGIN_REGISTRATION=true
 
 # Import Kitchen Sink Course Configuration
-EDXAPP_IMPORT_KITCHENSINK_COURSE=False
+EDXAPP_IMPORT_KITCHENSINK_COURSE={EDXAPP_IMPORT_KITCHENSINK_COURSE}
 
 # Memcache server
 # In order to support multiple VMSS resources, we have to support multiple memcache target servers to avoid collision of cache keys that result in 
@@ -145,6 +145,6 @@ EDXAPP_IMPORT_KITCHENSINK_COURSE=False
 MEMCACHE_SERVER_IP=$MYSQL_MASTER_IP
 
 # Conditionally enabling Mobile Rest Api in support of MPP integration scenarios
-EDXAPP_ENABLE_OAUTH2_PROVIDER=true
-EDXAPP_ENABLE_MOBILE_REST_API=true
-OAUTH_ENFORCE_SECURE=true
+EDXAPP_ENABLE_OAUTH2_PROVIDER=false
+EDXAPP_ENABLE_MOBILE_REST_API=false
+OAUTH_ENFORCE_SECURE=false
