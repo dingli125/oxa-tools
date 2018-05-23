@@ -16,7 +16,7 @@ ENVIRONMENT=bvt
 ##########################
 
 # the site certificate files (.crt & .key) have to be named after the BASE_URL value
-BASE_URL=nytraining.cf
+BASE_URL=
 LMS_URL=lms.$BASE_URL
 CMS_URL=cms.$BASE_URL
 PREVIEW_URL=preview.$BASE_URL
